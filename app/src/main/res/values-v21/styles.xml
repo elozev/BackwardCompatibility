@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="MaterialTheme" parent="ParentMaterialTheme">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ParentMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@color/textViewStyle</item>
+
+        <item name="colorButtonNormal">#B0BEC5</item>
+        <item name="android:colorControlHighlight">#FFE082</item>
+        <item name="android:colorControlActivated">#546E7A</item>
+    </style>
+
+</resources>
