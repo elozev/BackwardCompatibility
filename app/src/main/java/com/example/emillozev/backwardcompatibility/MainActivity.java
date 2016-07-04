@@ -18,50 +18,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Welcome, ");
+        toolbar.setSubtitle("folks!");
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Welcome,");
-        toolbar.setSubtitle("folks.");
+        toolbar.inflateMenu(R.menu.menu_main);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            toolbar.setElevation(10f);
-        }else{
+                String msg = "";
 
-        }
+
+                switch(item.getItemId()){
+                    case R.id.delete:
+                        msg = "delete";
+                        break;
+                    case R.id.edit:
+                        msg = "edit";
+                        break;
+                    case R.id.search:
+                        msg = "search";
+                        break;
+                    case R.id.exit:
+                        msg = "exit";
+                        break;
+                    case R.id.settings:
+                        msg = "settings";
+                        break;
+                }
+
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+
+                return true;
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        String msg = "";
-
-
-        switch(item.getItemId()){
-            case R.id.delete:
-                msg = "delete";
-                break;
-            case R.id.edit:
-                msg = "edit";
-                break;
-            case R.id.search:
-                msg = "search";
-                break;
-            case R.id.exit:
-                msg = "exit";
-                break;
-            case R.id.settings:
-                msg = "settings";
-                break;
-        }
-
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-
-        return super.onOptionsItemSelected(item);
-    }
 }
